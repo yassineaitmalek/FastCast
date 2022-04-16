@@ -45,13 +45,8 @@ public class Videoservice {
 	}
 
 	public Video getVideo(Long id) {
-		Optional<Video> v = vc.findById(id);
+		return vc.findById(id).orElse(null);
 
-		if (v.isEmpty()) {
-			return null;
-		}
-
-		return v.get();
 	}
 
 	public boolean delvideo(Long id) {
